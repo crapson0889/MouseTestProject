@@ -4,7 +4,7 @@ package
 	
 	public class PlayState extends FlxState
 	{
-		//public var player:Player = new Player;
+		[Embed(source = '../assets/cursor.png')] private var cursorPNG:Class;
 		
 		public function PlayState() 
 		{
@@ -14,12 +14,14 @@ package
 		override public function create():void
 		{
 			super.create();
+			FlxG.mouse.show();
+			FlxG.mouse.load(cursorPNG, 1, 8, 8);
 			
-			Registry.player = new Player;
-			add(Registry.bullets);
+			Registry.player = new PlayerManager;
 			add(Registry.player);
 			
-			FlxG.mouse.show();
+			Registry.debug = new FlxText(0, 0, 80, "");
+			add(Registry.debug);
 		}
 		
 	}

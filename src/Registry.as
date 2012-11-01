@@ -1,10 +1,11 @@
 package  
 {
+	import org.flixel.FlxText;
 
 	public class Registry 
 	{
-		public static var bullets:BulletManager = new BulletManager;
-		public static var player:Player;
+		public static var player:PlayerManager;
+		public static var debug:FlxText;
 		
 		public function Registry() 
 		{
